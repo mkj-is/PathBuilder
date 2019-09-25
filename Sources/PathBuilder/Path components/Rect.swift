@@ -1,13 +1,13 @@
 import SwiftUI
 
 public struct Rect: PathComponent {
-    private let rect: CGRect
+    private let rects: [CGRect]
 
-    public init(_ rect: CGRect) {
-        self.rect = rect
+    public init(_ rects: CGRect...) {
+        self.rects = rects
     }
 
     public func add(to path: inout Path) {
-        path.addRect(rect)
+        path.addRects(rects)
     }
 }

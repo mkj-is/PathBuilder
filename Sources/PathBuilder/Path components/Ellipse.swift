@@ -3,7 +3,7 @@ import SwiftUI
 public struct Ellipse: PathComponent {
     private let rect: CGRect
 
-    init(in rect: CGRect) {
+    public init(in rect: CGRect) {
         self.rect = rect
     }
 
