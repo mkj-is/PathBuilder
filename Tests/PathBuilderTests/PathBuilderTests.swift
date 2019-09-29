@@ -16,7 +16,7 @@ final class PathBuilderTests: XCTestCase {
             Rect(.zero)
             RelativeArc(center: .zero, radius: .zero, startAngle: .zero, delta: .zero)
             RoundedRect(in: .zero, cornerSize: .zero)
-            Subpath(path: CGMutablePath())
+            Subpath()
             TangentArc(end1: .zero, end2: .zero, radius: .zero)
         }
         XCTAssertEqual(path.boundingRect, .zero)
@@ -48,6 +48,28 @@ final class PathBuilderTests: XCTestCase {
     }
 
     func testIfPath() {
+        let draw = true
+        let path = Path {
+            Move(to: .zero)
+            if draw {
+                Line(CGPoint(x: 100, y: 100))
+            }
+        }
+        XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+    }
+
+    func testIfNotPath() {
+        let draw = false
+        let path = Path {
+            Move(to: .zero)
+            if draw {
+                Line(CGPoint(x: 100, y: 100))
+            }
+        }
+        XCTAssertEqual(path.boundingRect, .zero)
+    }
+
+    func testEitherPath() {
         let draw = true
         let path = Path {
             Move(to: .zero)
