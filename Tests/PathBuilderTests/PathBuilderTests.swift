@@ -39,8 +39,4 @@ final class PathBuilderTests: XCTestCase {
         XCTAssertEqual(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), path.boundingRect)
     }
 
-    static var allTests = [
-        ("testAllComponents", testAllComponents),
-        ("testSubpaths", testSubpaths),
-    ]
 }
