@@ -8,6 +8,7 @@ final class PathBuilderTests: XCTestCase {
         let path = Path {
             Arc(center: .zero, radius: .zero, startAngle: .zero, endAngle: .zero, clockwise: true)
             Close()
+            Curve(to: .zero, control1: .zero, control2: .zero)
             Ellipse(in: .zero)
             Move(to: .zero)
             Line(.zero)
