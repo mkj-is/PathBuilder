@@ -15,4 +15,8 @@ public struct RelativeArc: PathComponent {
     public func add(to path: inout Path) {
         path.addRelativeArc(center: center, radius: radius, startAngle: startAngle, delta: delta)
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.addRelativeArc(center: center, radius: radius, startAngle: CGFloat(startAngle.radians), delta: CGFloat(delta.radians))
+    }
 }

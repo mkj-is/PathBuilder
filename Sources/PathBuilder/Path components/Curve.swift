@@ -12,4 +12,8 @@ public struct Curve: PathComponent {
     public func add(to path: inout Path) {
         path.addCurve(to: point, control1: control1, control2: control2)
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.addCurve(to: point, control1: control1, control2: control2)
+    }
 }

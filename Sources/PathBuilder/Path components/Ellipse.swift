@@ -10,5 +10,9 @@ public struct Ellipse: PathComponent {
     public func add(to path: inout Path) {
         path.addEllipse(in: rect)
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.addEllipse(in: rect)
+    }
 }
 

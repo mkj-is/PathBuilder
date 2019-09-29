@@ -10,4 +10,8 @@ public struct Move: PathComponent {
     public func add(to path: inout Path) {
         path.move(to: point)
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.move(to: point)
+    }
 }

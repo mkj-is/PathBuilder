@@ -11,4 +11,8 @@ public struct QuadCurve: PathComponent {
     public func add(to path: inout Path) {
         path.addQuadCurve(to: point, control: control)
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.addQuadCurve(to: point, control: control)
+    }
 }

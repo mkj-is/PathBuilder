@@ -6,4 +6,8 @@ public struct Close: PathComponent {
     public func add(to path: inout Path) {
         path.closeSubpath()
     }
+
+    public func add(to cgPath: CGMutablePath) {
+        cgPath.closeSubpath()
+    }
 }
