@@ -14,8 +14,4 @@ public struct RoundedRect: PathComponent {
     public func add(to path: inout Path) {
         path.addRoundedRect(in: rect, cornerSize: cornerSize, style: style)
     }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addRoundedRect(in: rect, cornerWidth: cornerSize.width, cornerHeight: cornerSize.height)
-    }
 }

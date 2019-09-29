@@ -1,21 +1,17 @@
 import SwiftUI
 
 public struct Subpath: PathComponent {
-    private let path: CGPath
+    private let path: Path
 
-    public init(path: CGPath = CGMutablePath()) {
+    public init(path: Path = Path()) {
         self.path = path
     }
 
     public init(@PathBuilder _ builder: () -> PathComponent) {
-        self.path = CGPath.build(builder)
+        self.path = Path(builder)
     }
 
     public func add(to path: inout Path) {
-        path.addPath(Path(self.path))
-    }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addPath(self.path)
+        path.addPath(self.path)
     }
 }

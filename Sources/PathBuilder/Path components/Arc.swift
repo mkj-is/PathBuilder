@@ -18,8 +18,4 @@ public struct Arc: PathComponent {
     public func add(to path: inout Path) {
         path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
     }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addArc(center: center, radius: radius, startAngle: CGFloat(startAngle.radians), endAngle: CGFloat(endAngle.radians), clockwise: clockwise)
-    }
 }

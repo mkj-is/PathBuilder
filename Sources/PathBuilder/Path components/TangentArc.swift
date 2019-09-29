@@ -14,8 +14,4 @@ public struct TangentArc: PathComponent {
     public func add(to path: inout Path) {
         path.addArc(tangent1End: end1, tangent2End: end2, radius: radius)
     }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addArc(tangent1End: end1, tangent2End: end2, radius: radius)
-    }
 }

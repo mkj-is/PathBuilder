@@ -10,8 +10,4 @@ public struct Line: PathComponent {
     public func add(to path: inout Path) {
         path.addLines(points)
     }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addLines(between: points)
-    }
 }

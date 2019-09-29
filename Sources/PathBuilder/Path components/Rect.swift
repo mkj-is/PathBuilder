@@ -10,8 +10,4 @@ public struct Rect: PathComponent {
     public func add(to path: inout Path) {
         path.addRects(rects)
     }
-
-    public func add(to cgPath: CGMutablePath) {
-        cgPath.addRects(rects)
-    }
 }
