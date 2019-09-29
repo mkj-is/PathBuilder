@@ -39,4 +39,36 @@ final class PathBuilderTests: XCTestCase {
         XCTAssertEqual(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), path.boundingRect)
     }
 
+    func testSingleComponentPath() {
+        let path = Path {
+            Move(to: .zero)
+        }
+        XCTAssertEqual(path.boundingRect, .zero)
+    }
+
+    func testIfPath() {
+        let draw = true
+        let path = Path {
+            Move(to: .zero)
+            if draw {
+                Line(CGPoint(x: 100, y: 100))
+            } else {
+                Line(CGPoint(x: 50, y: 50))
+            }
+        }
+        XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+    }
+
+    func testElsePath() {
+        let draw = false
+        let path = Path {
+            Move(to: .zero)
+            if draw {
+                Line(CGPoint(x: 100, y: 100))
+            } else {
+                Line(CGPoint(x: 50, y: 50))
+            }
+        }
+        XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
+    }
 }
