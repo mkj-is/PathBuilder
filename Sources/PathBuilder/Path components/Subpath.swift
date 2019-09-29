@@ -3,7 +3,11 @@ import SwiftUI
 public struct Subpath: PathComponent {
     private let path: CGPath
 
-    public init(@PathBuilder _ builder: () -> [PathComponent]) {
+    public init(path: CGPath) {
+        self.path = path
+    }
+
+    public init(@PathBuilder _ builder: () -> PathComponent) {
         self.path = CGPath.build(builder)
     }
 
