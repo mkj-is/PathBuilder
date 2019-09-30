@@ -4,6 +4,8 @@ import SwiftUI
 public struct Subpath: PathComponent {
     private let path: Path
 
+    /// Initializes path component, which appends another path object to the path.
+    /// - Parameter path: Path to be appended.
     public init(path: Path = Path()) {
         self.path = path
     }
