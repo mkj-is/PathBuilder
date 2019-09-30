@@ -1,13 +1,13 @@
 import SwiftUI
 
 public struct Line: PathComponent {
-    private let points: [CGPoint]
+    private let point: CGPoint
 
-    public init(_ points: CGPoint...) {
-        self.points = points
+    public init(to point: CGPoint) {
+        self.point = point
     }
 
     public func add(to path: inout Path) {
-        path.addLines(points)
+        path.addLine(to: point)
     }
 }

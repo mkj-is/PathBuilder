@@ -11,7 +11,8 @@ final class PathBuilderTests: XCTestCase {
             Curve(to: .zero, control1: .zero, control2: .zero)
             Ellipse(in: .zero)
             Move(to: .zero)
-            Line(.zero)
+            Line(to: .zero)
+            Lines(.zero, .zero)
             QuadCurve(to: .zero, control: .zero)
             Rect(.zero)
             RelativeArc(center: .zero, radius: .zero, startAngle: .zero, delta: .zero)
@@ -26,15 +27,15 @@ final class PathBuilderTests: XCTestCase {
         let path = Path {
             Subpath {
                 Move(to: CGPoint(x: 100, y: 100))
-                Line(.zero)
+                Line(to: .zero)
             }
             Subpath {
                 Move(to: CGPoint(x: 100, y: 0))
-                Line(CGPoint(x: 0, y: 100))
+                Line(to: CGPoint(x: 0, y: 100))
             }
             Subpath {
                 Move(to: CGPoint(x: 0, y: 100))
-                Line(CGPoint(x: 100, y: 0))
+                Line(to: CGPoint(x: 100, y: 0))
             }
         }
         XCTAssertEqual(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), path.boundingRect)
@@ -50,9 +51,8 @@ final class PathBuilderTests: XCTestCase {
     func testIfPath() {
         let draw = true
         let path = Path {
-            Move(to: .zero)
             if draw {
-                Line(CGPoint(x: 100, y: 100))
+                Rect(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
             }
         }
         XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
@@ -63,8 +63,9 @@ final class PathBuilderTests: XCTestCase {
         let path = Path {
             Move(to: .zero)
             if draw {
-                Line(CGPoint(x: 100, y: 100))
+                Line(to: CGPoint(x: 100, y: 100))
             }
+            Close()
         }
         XCTAssertEqual(path.boundingRect, .zero)
     }
@@ -72,11 +73,10 @@ final class PathBuilderTests: XCTestCase {
     func testEitherPath() {
         let draw = true
         let path = Path {
-            Move(to: .zero)
             if draw {
-                Line(CGPoint(x: 100, y: 100))
+                Rect(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
             } else {
-                Line(CGPoint(x: 50, y: 50))
+                Rect(CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
             }
         }
         XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
@@ -85,11 +85,10 @@ final class PathBuilderTests: XCTestCase {
     func testElsePath() {
         let draw = false
         let path = Path {
-            Move(to: .zero)
             if draw {
-                Line(CGPoint(x: 100, y: 100))
+                Rect(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
             } else {
-                Line(CGPoint(x: 50, y: 50))
+                Rect(CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
             }
         }
         XCTAssertEqual(path.boundingRect, CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
