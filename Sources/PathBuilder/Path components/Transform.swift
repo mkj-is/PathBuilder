@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Appends another transformed subpath object to the path.
+/// Groups and appends another subpath object to the path.
 public struct Transform: PathComponent {
     private let transform: CGAffineTransform
     private let path: Path
