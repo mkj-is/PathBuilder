@@ -12,7 +12,7 @@ final class PathBuilderTests: XCTestCase {
             Ellipse(in: .zero)
             Move(to: .zero)
             Line(to: .zero)
-            Lines(.zero, .zero)
+            Lines(between: [.zero, .zero])
             QuadCurve(to: .zero, control: .zero)
             Rect(.zero)
             RelativeArc(center: .zero, radius: .zero, startAngle: .zero, delta: .zero)
