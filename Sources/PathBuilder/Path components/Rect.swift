@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds a set of rectangular subpaths to the path.
 public struct Rect: PathComponent {
     private let rects: [CGRect]
 

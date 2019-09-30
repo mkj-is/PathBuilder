@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Appends a straight line segment from the current point to the specified point.
 public struct Line: PathComponent {
     private let point: CGPoint
 

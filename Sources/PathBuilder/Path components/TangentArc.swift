@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds an arc of a circle to the path, specified with a radius and two tangent lines.
 public struct TangentArc: PathComponent {
 
     private let end1, end2: CGPoint

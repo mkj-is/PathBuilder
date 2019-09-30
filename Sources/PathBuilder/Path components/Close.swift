@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Closes and completes a subpath in a path.
 public struct Close: PathComponent {
     public init() {}
 

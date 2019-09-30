@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds a cubic Bézier curve to the path, with the specified end point and control points.
 public struct Curve: PathComponent {
     private let point, control1, control2: CGPoint
 

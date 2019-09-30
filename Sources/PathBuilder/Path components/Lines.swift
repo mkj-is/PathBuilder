@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds a sequence of connected straight-line segments to the path.
 public struct Lines: PathComponent {
     private let points: [CGPoint]
 

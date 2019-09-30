@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Begins a new subpath at the specified point.
 public struct Move: PathComponent {
     private let point: CGPoint
 

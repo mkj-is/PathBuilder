@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds an arc of a circle to the path, specified with a radius and angles.
 public struct Arc: PathComponent {
 
     private let center: CGPoint

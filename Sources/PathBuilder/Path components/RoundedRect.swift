@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Adds a subpath to the path, in the shape of a rectangle with rounded corners.
 public struct RoundedRect: PathComponent {
     private let rect: CGRect
     private let cornerSize: CGSize

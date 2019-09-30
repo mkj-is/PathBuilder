@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Appends another path object to the path.
 public struct Subpath: PathComponent {
     private let path: Path
 
