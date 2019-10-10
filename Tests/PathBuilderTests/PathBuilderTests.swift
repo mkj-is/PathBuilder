@@ -41,6 +41,16 @@ final class PathBuilderTests: XCTestCase {
         XCTAssertEqual(CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), path.boundingRect)
     }
 
+    func testLoop() {
+        let path = Path {
+            Loop(sequence: 0...100) { i in
+                Move(to: .zero)
+                Line(to: CGPoint(x: sin(CGFloat(i)) * 100, y: cos(CGFloat(i)) * 100))
+            }
+        }
+        XCTAssertNotEqual(path.boundingRect, .zero)
+    }
+
     func testSingleComponentPath() {
         let path = Path {
             Move(to: .zero)
