@@ -1,9 +1,9 @@
 import SwiftUI
 
-public struct Loop<S: Sequence>: PathComponent {
+public struct Loop: PathComponent {
     private let components: [PathComponent]
 
-    public init(sequence: S, @PathBuilder _ builder: (S.Element) -> PathComponent) {
+    public init<S: Sequence>(sequence: S, @PathBuilder _ builder: (S.Element) -> PathComponent) {
         self.components = sequence.map(builder)
     }
 
