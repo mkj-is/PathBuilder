@@ -67,6 +67,7 @@ There are many basic path components present. You can create a new one by confor
 
 #### Grouping components
 
+- *Loop* – Appends components to path iterating over supplied sequence and building path for each element.
 - *Subpath* – Groups and appends another subpath object to the path.
 - *Transform* – Groups, transforms and appends another transformed subpath object to the path.
 
