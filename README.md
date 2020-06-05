@@ -1,3 +1,5 @@
+<img alt="PathBuilder logo" align="right" src="Documentation/PathBuilder.svg">
+
 # PathBuilder
 
 _Path builder_ is a complete function builder for lifting paths into the declarative SwiftUI world. This function can be used for elegant and short definition of paths. Missing documentation gaps in SwiftUI are filled in using the old but good CGMutablePath knowledge.
