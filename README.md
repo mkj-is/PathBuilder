@@ -2,21 +2,11 @@
 
 # PathBuilder
 
-_Path builder_ is a complete function builder for lifting paths into the declarative SwiftUI world. This function can be used for elegant and short definition of paths. Missing documentation gaps in SwiftUI are filled in using the old but good CGMutablePath knowledge.
+_Path builder_ is a complete result builder for lifting `Path` into the declarative SwiftUI world. This `@resultBuilder` can be used for elegant and short definition of paths. Missing documentation gaps in SwiftUI are filled in using the old but good CGMutablePath knowledge.
 
 ## Motivation
 
-Just wanted to learn to implement function builders. And during playing with animated paths in SwiftUI found a perfect place to experiment.
-
-## Requirements
-
-- Xcode 11 or above
-- Swift 5.1 or above
-- iOS 13, macOS 10.15, watchOS 6.0, tvOS 13.0 or above
-
-## Installation
-
-Using Swift Package Manager in Xcode.
+I just wanted to learn to implement result builders. And during playing with animated paths in SwiftUI found a perfect place to experiment.
 
 ## Usage
 
@@ -58,6 +48,7 @@ There are many basic path components present. You can create a new one by confor
 - *Close* – Closes and completes a subpath in a path.
 - *Curve* – Adds a cubic Bézier curve to the path, with the specified end point and control points.
 - *Ellipse* – Adds an ellipse that fits inside the specified rectangle.
+- *EmptySubpath* – Adds empty subpath, used mainly as a temporary placeholder.
 - *Line* – Appends a straight line segment from the current point to the specified point.
 - *Lines* – Adds a sequence of connected straight-line segments to the path.
 - *Move* – Begins a new subpath at the specified point.
@@ -70,8 +61,22 @@ There are many basic path components present. You can create a new one by confor
 #### Grouping components
 
 - *Loop* – Appends components to path iterating over supplied sequence and building path for each element.
-- *Subpath* – Groups and appends another subpath object to the path.
-- *Transform* – Groups, transforms and appends another transformed subpath object to the path.
+- *Subpath* – Groups and appends another subpath object to the path and optionally transforms it.
+
+## Requirements
+
+For Swift 5.1 to 5.3 use package version 1.1.1.
+
+Otherwise for version 2.0+ use latest tools:
+
+- Xcode 12.5 or above
+- Swift 5.4 or above
+- iOS 13, macOS 10.15, watchOS 6.0, tvOS 13.0 or above
+
+## Installation
+
+Using Swift Package Manager in Xcode
+or by adding to your Package manifest file.
 
 ## Contributing
 
