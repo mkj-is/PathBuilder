@@ -17,8 +17,9 @@ final class PathBuilderTests: XCTestCase {
             Rect(.zero)
             RelativeArc(center: .zero, radius: .zero, startAngle: .zero, delta: .zero)
             RoundedRect(in: .zero, cornerSize: .zero)
-            Subpath()
+            Subpath(path: Path())
             TangentArc(end1: .zero, end2: .zero, radius: .zero)
+            EmptySubpath()
         }
         XCTAssertEqual(path.boundingRect, .zero)
     }
