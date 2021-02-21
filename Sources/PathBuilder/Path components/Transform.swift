@@ -7,9 +7,9 @@ public struct Transform: PathComponent {
 
     /// Initializes path component, which appends another transformed subpath object to the path.
     /// - Parameter transform: An affine transform to apply to the subpath before adding to the path.
-    public init(transform: CGAffineTransform, @PathBuilder _ builder: () -> PathComponent) {
+    public init(transform: CGAffineTransform, @PathBuilder _ builder: () -> Path) {
         self.transform = transform
-        self.path = Path(builder)
+        self.path = builder()
     }
 
     public func add(to path: inout Path) {

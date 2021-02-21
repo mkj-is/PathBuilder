@@ -6,11 +6,11 @@ public struct Subpath: PathComponent {
 
     /// Initializes path component, which appends another path object to the path.
     /// - Parameter path: Path to be appended.
-    public init(path: Path = Path()) {
+    public init(path: Path) {
         self.component = path
     }
 
-    public init(@PathBuilder _ builder: () -> PathComponent) {
+    public init(@PathBuilder _ builder: () -> Path) {
         self.component = builder()
     }
 

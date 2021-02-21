@@ -1,29 +1,37 @@
 import SwiftUI
 
-/// A custom parameter attribute that constructs paths from closures.
-@_functionBuilder
+/// A custom result builder which constructs Paths from closures.
+@resultBuilder
 public struct PathBuilder {
-
-    public static func buildBlock(_ components: PathComponent...) -> PathComponent {
-        return Subpath(path: Path { path in
-            for component in components {
-                component.add(to: &path)
-            }
-        })
+    public static func buildArray(_ components: [PathComponent]) -> PathComponent {
+        components
     }
 
-    /// Provides support for “if” statements in multi-statement closures, producing an optional path component that is added only when the condition evaluates to true.
-    public static func buildIf(_ component: PathComponent?) -> PathComponent {
-        return component.flatMap { component in
-            Subpath { component }
-        } ?? Subpath()
+    public static func buildBlock(_ components: PathComponent...) -> PathComponent {
+        components
+    }
+
+    /// Enables support for `if` statements that do not have an `else`.
+    public static func buildOptional(_ component: PathComponent?) -> PathComponent {
+        component ?? EmptySubpath()
     }
 
     public static func buildEither(first: PathComponent) -> PathComponent {
-        return first
+        first
     }
 
     public static func buildEither(second: PathComponent) -> PathComponent {
-        return second
+        second
+    }
+    
+    /// information.
+    public static func buildLimitedAvailability(_ component: PathComponent) -> PathComponent {
+        component
+    }
+    
+    public static func buildFinalResult(_ component: PathComponent) -> Path {
+        Path { path in
+            component.add(to: &path)
+        }
     }
 }
