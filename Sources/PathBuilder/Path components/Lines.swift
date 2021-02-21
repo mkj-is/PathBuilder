@@ -5,8 +5,14 @@ public struct Lines: PathComponent {
     private let points: [CGPoint]
 
     /// Initializes path component, which adds a sequence of connected straight-line segments to the path.
-    /// - Parameter points: An array of values that specify the start and end points of the line segments to draw. Each point in the array specifies a position in user space. The first point in the array specifies the initial starting point.
+    /// - Parameter points: An array of values which specifies the start and end points of the line segments to draw. Each point in the array specifies a position in user space. The first point in the array specifies the initial starting point.
     public init(between points: [CGPoint]) {
+        self.points = points
+    }
+
+    /// Initializes path component, which adds a sequence of connected straight-line segments to the path.
+    /// - Parameter points: Variable arguments which specifies the start and end points of the line segments to draw. Each point in the array specifies a position in user space. The first point in the array specifies the initial starting point.
+    public init(_ points: CGPoint...) {
         self.points = points
     }
 

@@ -4,9 +4,15 @@ import SwiftUI
 public struct Rect: PathComponent {
     private let rects: [CGRect]
 
-    /// Initializes path component, which adds a set of rectangular subpaths to the path.
+    /// Initializes path component, which adds an array of rectangular subpaths to the path.
     /// - Parameter rects: An array of rectangles, specified in user space coordinates.
     public init(_ rects: CGRect...) {
+        self.rects = rects
+    }
+    
+    /// Initializes path component, which adds an array of rectangular subpaths to the path.
+    /// - Parameter rects: An array of rectangles, specified in user space coordinates.
+    public init(_ rects: [CGRect]) {
         self.rects = rects
     }
 
