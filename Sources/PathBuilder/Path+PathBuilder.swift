@@ -6,9 +6,3 @@ public extension Path {
         self = builder()
     }
 }
-
-extension Path: PathComponent {
-    public func add(to path: inout Path) {
-        path.addPath(self)
-    }
-}
