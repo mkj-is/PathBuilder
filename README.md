@@ -47,7 +47,7 @@ There are many basic path components present. You can create a new one by confor
 - *Arc* – Adds an arc of a circle to the path, specified with a radius and angles.
 - *Close* – Closes and completes a subpath in a path.
 - *Curve* – Adds a cubic Bézier curve to the path, with the specified end point and control points.
-- *Ellipse* – Adds an ellipse that fits inside the specified rectangle.
+- *Oval* – Adds an ellipse that fits inside the specified rectangle.
 - *EmptySubpath* – Adds empty subpath, used mainly as a temporary placeholder.
 - *Line* – Appends a straight line segment from the current point to the specified point.
 - *Lines* – Adds a sequence of connected straight-line segments to the path.
