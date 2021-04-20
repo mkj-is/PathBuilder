@@ -13,14 +13,17 @@ let package = Package(
     products: [
         .library(
             name: "PathBuilder",
-            targets: ["PathBuilder"])
+            targets: ["PathBuilder"]
+        )
     ],
     targets: [
         .target(
             name: "PathBuilder",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "PathBuilderTests",
-            dependencies: ["PathBuilder"])
+            dependencies: ["PathBuilder"]
+        )
     ]
 )
