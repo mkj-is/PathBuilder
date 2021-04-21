@@ -14,4 +14,3 @@ public struct Oval: PathComponent {
         path.addEllipse(in: rect)
     }
 }
-
