@@ -9,7 +9,7 @@ final class PathBuilderTests: XCTestCase {
             Arc(center: .zero, radius: .zero, startAngle: .zero, endAngle: .zero, clockwise: true)
             Close()
             Curve(to: .zero, control1: .zero, control2: .zero)
-            Ellipse(in: .zero)
+            Oval(in: .zero)
             Move(to: .zero)
             Line(to: .zero)
             Lines(between: [.zero, .zero])
@@ -17,8 +17,9 @@ final class PathBuilderTests: XCTestCase {
             Rect(.zero)
             RelativeArc(center: .zero, radius: .zero, startAngle: .zero, delta: .zero)
             RoundedRect(in: .zero, cornerSize: .zero)
-            Subpath()
+            Subpath(path: Path())
             TangentArc(end1: .zero, end2: .zero, radius: .zero)
+            EmptySubpath()
         }
         XCTAssertEqual(path.boundingRect, .zero)
     }

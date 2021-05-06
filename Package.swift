@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -13,14 +13,17 @@ let package = Package(
     products: [
         .library(
             name: "PathBuilder",
-            targets: ["PathBuilder"])
+            targets: ["PathBuilder"]
+        )
     ],
     targets: [
         .target(
             name: "PathBuilder",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "PathBuilderTests",
-            dependencies: ["PathBuilder"])
+            dependencies: ["PathBuilder"]
+        )
     ]
 )

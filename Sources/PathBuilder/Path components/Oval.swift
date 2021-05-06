@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Adds an ellipse that fits inside the specified rectangle.
-public struct Ellipse: PathComponent {
+public struct Oval: PathComponent {
     private let rect: CGRect
 
     /// Initializes path component, which adds an ellipse that fits inside the specified rectangle.
@@ -14,4 +14,3 @@ public struct Ellipse: PathComponent {
         path.addEllipse(in: rect)
     }
 }
-
