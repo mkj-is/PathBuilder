@@ -47,4 +47,10 @@ public struct PathBuilder {
             component.add(to: &path)
         }
     }
+
+    /// This will be called on the final result from the outermost
+    /// block statement to produce the partial `PathComponent`.
+    public static func buildFinalResult(_ component: PathComponent) -> PathComponent {
+        component
+    }
 }
