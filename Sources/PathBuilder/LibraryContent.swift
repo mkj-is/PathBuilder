@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Vincent on 21/7/2023.
-//
-
 import SwiftUI
 import DeveloperToolsSupport
 
