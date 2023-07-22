@@ -1,7 +1,7 @@
 import SwiftUI
 import DeveloperToolsSupport
 
-@available(macOS 11.0, *)
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 struct LibraryContent: LibraryContentProvider {
     var views: [LibraryItem] {
         LibraryItem(
