@@ -23,9 +23,6 @@ struct LibraryContent: LibraryContentProvider {
         LibraryItem(EmptySubpath())
         LibraryItem(Line(to: CGPoint(x: 50, y: 50)))
         LibraryItem(Lines(CGPoint(x: 60, y: 60), CGPoint(x: 70, y: 70)))
-        LibraryItem(Loop(sequence: 0..<10) { i in
-            Line(to: CGPoint(x: i * 5, y: i * 5))
-        })
         LibraryItem(Oval(in: CGRect(x: 0, y: 0, width: 10, height: 20)))
         LibraryItem(QuadCurve(to: CGPoint(x: 0, y: 0), control: CGPoint(x: 10, y: 10)))
         LibraryItem(Rect(CGRect(x: 0, y: 0, width: 100, height: 100), CGRect(x: 10, y: 10, width: 20, height: 30)))
