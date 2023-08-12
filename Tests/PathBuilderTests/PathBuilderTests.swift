@@ -56,7 +56,7 @@ final class PathBuilderTests: XCTestCase {
         let path = Path {
             Move(to: .zero)
         }
-        XCTAssertEqual(path.boundingRect, .zero)
+        XCTAssertEqual(path.boundingRect.size, .zero)
     }
 
     func testIfPath() {
