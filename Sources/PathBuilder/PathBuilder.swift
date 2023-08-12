@@ -38,14 +38,6 @@ public struct PathBuilder {
     public static func buildLimitedAvailability(_ component: PathComponent) -> PathComponent {
         component
     }
-    
-    /// This will be called on the partial result from the outermost
-    /// block statement to produce the final returned result `Path`.
-    public static func buildFinalResult(_ component: PathComponent) -> Path {
-        Path { path in
-            component.add(to: &path)
-        }
-    }
 
     /// This will be called on the final result from the outermost
     /// block statement to produce the partial `PathComponent`.

@@ -17,9 +17,9 @@ public struct Subpath: PathComponent {
     /// - Parameters:
     ///   - transform: An affine transform to apply to the subpath before adding to the path.
     ///   - builder: Result builder for creating the path from components.
-    public init(transform: CGAffineTransform = .identity, @PathBuilder _ builder: () -> Path) {
+    public init(transform: CGAffineTransform = .identity, @PathBuilder _ builder: () -> PathComponent) {
         self.transform = transform
-        self.path = builder()
+        self.path = Path(builder)
     }
     
     /// Intializes subpath with shape filling the provided rectangle.
