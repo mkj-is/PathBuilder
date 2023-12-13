@@ -51,6 +51,22 @@ final class PathBuilderTests: XCTestCase {
         }
         XCTAssertNotEqual(path.boundingRect, .zero)
     }
+    
+    func testEllipse() {
+        let ellipseSize = CGSize(width: 10, height: 20)
+        let ellipseRect = CGRect(origin: .zero, size: ellipseSize)
+        let transform = CGAffineTransform(scaleX: 2, y: 1)
+        let ellipsePath = Path {
+            Ellipse(in: ellipseRect, transform: transform)
+        }
+        
+        let circleSize = CGSize(width: 20, height: 20)
+        let circleRect = CGRect(origin: .zero, size: circleSize)
+        let circlePath = Path {
+            Oval(in: circleRect)
+        }
+        XCTAssertEqual(ellipsePath.boundingRect, circlePath.boundingRect)
+    }
 
     func testSingleComponentPath() {
         let path = Path {
